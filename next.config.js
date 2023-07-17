@@ -1,3 +1,4 @@
+// next.config.js
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
@@ -6,6 +7,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
   images: {
+    disableStaticImages: true, // Disable Image Optimization
     domains: [
       'www.notion.so',
       'notion.so',
