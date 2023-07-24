@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Class 9</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1de53487-3fe5-4c47-99e4-8a61c0c1ceaa" class="page sans"><header><h1 class="page-title">Class 9</h1><p class="page-description"></p></header><div class="page-body"><h1 id="0b8a9d35-b389-4df0-82bb-c75fb5922c82" class="">Welcome to Class 9 at AcaduVeda - Where Learning Takes Flight!</h1><h2 id="9b0d4669-9684-4e64-b676-b55e7b26ad5e" class="">Introduction to Class 9 at AcaduVeda</h2><p id="2de4eb92-873d-4c22-9d02-6a4a708bb57c" class="">Congratulations on stepping into the exciting world of Class 9 at AcaduVeda! This is a crucial phase in your academic journey, where the foundation for future success is laid. We understand the significance of Class 9, and that&#x27;s why we have curated an enriching learning experience exclusively for CBSE board students like you.</p><p id="e8cd2220-161e-4f22-978b-823269dcb550" class="">At AcaduVeda, we believe that learning is an adventure that should be enjoyable, interactive, and result-driven. Our dedicated team of educators and subject matter experts is committed to providing you with the best resources, notes, solutions, and extra questions to elevate your learning to new heights. Get ready to explore the wonders of knowledge and excel in your Class 9 journey with us!</p><h2 id="c91d4d39-9fb2-4847-9488-e0a76e65fdec" class="">Class 9 CBSE Board Subjects</h2><figure id="73d40f55-a66f-4a4d-9676-f85489af56f7" class="link-to-page"><a href="Class%209%201de534873fe54c4799e48a61c0c1ceaa/Mathematics%2073d40f55a66f4a4d9676f85489af56f7.html">Mathematics</a></figure><ul id="0184e05c-e02b-4ad5-af59-b1b291b53e54" class="bulleted-list"><li style="list-style-type:disc"><strong>Number Systems</strong></li></ul><ul id="8e441f02-595a-4e00-bd1f-e50a030b91e0" class="bulleted-list"><li style="list-style-type:disc"><strong>Polynomials</strong></li></ul><ul id="67023fe3-6c79-4162-ac5b-040c3d7f53c2" class="bulleted-list"><li style="list-style-type:disc"><strong>Coordinate Geometry</strong></li></ul><ul id="58292cd6-418b-4fe2-9e14-5c453c4b3992" class="bulleted-list"><li style="list-style-type:disc"><strong>Linear Equations in Two Variables</strong></li></ul><ul id="fa2e7d50-283b-4ad5-9b38-ed027df96dca" class="bulleted-list"><li style="list-style-type:disc"><strong>Introduction to Euclid&#x27;s Geometry</strong></li></ul><ul id="5b0eb877-c92c-44ad-a883-7a4a0c67b720" class="bulleted-list"><li style="list-style-type:disc"><strong>Lines and Angles</strong></li></ul><ul id="1ac03da9-6567-4823-b7c7-18f8aa6429b4" class="bulleted-list"><li style="list-style-type:disc"><strong>Triangles</strong></li></ul><ul id="67afd25f-0a51-413d-ad78-b3c82797af17" class="bulleted-list"><li style="list-style-type:disc"><strong>Quadrilaterals</strong></li></ul><ul id="d249067a-4255-46b8-8cde-53bc21f69b18" class="bulleted-list"><li style="list-style-type:disc"><strong>Areas of Parallelograms and Triangles</strong></li></ul><ul id="21b16006-3a67-4cb0-b76c-d40a51c11ce7" class="bulleted-list"><li style="list-style-type:disc"><strong>Circles</strong></li></ul><ul id="fcd67487-deb2-42b5-afab-db63f4aa3fbd" class="bulleted-list"><li style="list-style-type:disc"><strong>Constructions</strong></li></ul><ul id="7ecff59d-9cbc-4e95-8272-1224c51b25ae" class="bulleted-list"><li style="list-style-type:disc"><strong>Heron&#x27;s Formula</strong></li></ul><ul id="3bb161cc-5e86-47d6-94cf-9a62756eb240" class="bulleted-list"><li style="list-style-type:disc"><strong>Surface Areas and Volumes</strong></li></ul><ul id="654c2e68-e56f-44e4-a8ed-9b44b1ca0a89" class="bulleted-list"><li style="list-style-type:disc"><strong>Statistics</strong></li></ul><ul id="d1e1f14d-7062-4b01-b4d0-e1bd290c6915" class="bulleted-list"><li style="list-style-type:disc"><strong>Probability</strong></li></ul><h3 id="afdb79d1-5e35-4747-8d8e-850cc0ff0b1e" class="">Science</h3><ul id="a7822b0e-7418-4df5-90bd-0cc7d6c91662" class="bulleted-list"><li style="list-style-type:disc"><strong>Matter - Nature and Behavior</strong></li></ul><ul id="3ba98a03-260f-4edd-b4db-517d76d2e449" class="bulleted-list"><li style="list-style-type:disc"><strong>Organization in the Living World</strong></li></ul><ul id="bcae517b-785e-47fd-bd16-4ea57d1e5a77" class="bulleted-list"><li style="list-style-type:disc"><strong>Motion, Force, and Work</strong></li></ul><ul id="649f0324-c4f0-4a7b-b1c7-e831e4ecb24e" class="bulleted-list"><li style="list-style-type:disc"><strong>Our Environment</strong></li></ul><ul id="51409d54-a5f0-49af-8917-94c4a78519aa" class="bulleted-list"><li style="list-style-type:disc"><strong>Food Production and Management</strong></li></ul><ul id="6720c98d-6a68-41d7-a3b8-8678df81f707" class="bulleted-list"><li style="list-style-type:disc"><strong>Atoms and Molecules</strong></li></ul><ul id="e76bd920-7fe8-453c-a66a-71c5b65e8a2b" class="bulleted-list"><li style="list-style-type:disc"><strong>Cell - The Fundamental Unit of Life</strong></li></ul><ul id="c3167a1b-bc9a-42b6-b62b-0c6f54317ffd" class="bulleted-list"><li style="list-style-type:disc"><strong>Tissues</strong></li></ul><ul id="187870a9-a067-47b8-b852-3a869da9baed" class="bulleted-list"><li style="list-style-type:disc"><strong>Diversity in Living Organisms</strong></li></ul><ul id="7ab25283-924c-4532-913f-c7c531d84bab" class="bulleted-list"><li style="list-style-type:disc"><strong>Gravitation</strong></li></ul><ul id="5903323d-e36d-4cc0-a2f2-c64e18b038aa" class="bulleted-list"><li style="list-style-type:disc"><strong>Sound</strong></li></ul><ul id="dc4c273a-4d6f-46ab-b6c5-c41eb29fc216" class="bulleted-list"><li style="list-style-type:disc"><strong>Why Do We Fall Ill?</strong></li></ul><ul id="bce1924b-f11c-480b-adbc-4ae3786589df" class="bulleted-list"><li style="list-style-type:disc"><strong>Natural Resources</strong></li></ul><ul id="43fe5e8a-71cb-47a6-b1fe-31895a80d406" class="bulleted-list"><li style="list-style-type:disc"><strong>Improvement in Food Resources</strong></li></ul><ul id="92ce3ef5-2776-427d-9b29-b50d61a9fee9" class="bulleted-list"><li style="list-style-type:disc"><strong>Is Matter Around Us Pure?</strong></li></ul><ul id="a9fde49a-a781-45c4-8a6c-772cffc6813d" class="bulleted-list"><li style="list-style-type:disc"><strong>The Fundamental Unit of Life</strong></li></ul><ul id="0bb626ec-9825-4b88-b374-3fb9494b670d" class="bulleted-list"><li style="list-style-type:disc"><strong>Structure of the Atom</strong></li></ul><h3 id="ed7cdb0e-cc25-45fb-bd3b-4f36a845d53e" class="">English</h3><ul id="c7d90114-b34a-42ee-a133-2f448cd0a830" class="bulleted-list"><li style="list-style-type:disc"><strong>Beehive</strong><ul id="a8f3c19b-5a50-4418-9f85-878c80bcdc79" class="bulleted-list"><li style="list-style-type:circle">The Fun They Had</li></ul><ul id="b48dccff-c006-45be-acb3-b977c306d0b6" class="bulleted-list"><li style="list-style-type:circle">The Sound of Music</li></ul><ul id="d9991bdd-7806-4ff9-9640-5e7ee2a3c679" class="bulleted-list"><li style="list-style-type:circle">The Little Girl</li></ul><ul id="9da76a38-32a3-4407-96af-e22b70e322b5" class="bulleted-list"><li style="list-style-type:circle">A Truly Beautiful Mind</li></ul><ul id="2fa7cdf8-9dd3-4cce-954f-bf481b5508e1" class="bulleted-list"><li style="list-style-type:circle">The Snake and the Mirror</li></ul><ul id="b5aa395a-b1f1-4be3-b1d3-5bf8138ee4ea" class="bulleted-list"><li style="list-style-type:circle">My Childhood</li></ul><ul id="44720323-0b99-4169-b7e9-a406f71c0d64" class="bulleted-list"><li style="list-style-type:circle">Packing</li></ul><ul id="d2068246-ac48-4889-9092-ee79f0e650a3" class="bulleted-list"><li style="list-style-type:circle">Reach for the Top</li></ul><ul id="a3e068c9-3bf9-45c6-9afb-00d510ed74cc" class="bulleted-list"><li style="list-style-type:circle">The Bond of Love</li></ul><ul id="f9ea74ed-94a4-4948-aa57-f871f54b4465" class="bulleted-list"><li style="list-style-type:circle">Kathmandu</li></ul><ul id="7b99aebd-0028-4bf6-bb76-aae0249992bf" class="bulleted-list"><li style="list-style-type:circle">If I Were You</li></ul></li></ul><ul id="75f62959-c494-4bf5-b258-9f3844901c73" class="bulleted-list"><li style="list-style-type:disc"><strong>Moments</strong><ul id="dff744c2-864d-4721-8494-09e208c6d560" class="bulleted-list"><li style="list-style-type:circle">The Lost Child</li></ul><ul id="0eab5228-7a5b-43c4-84e3-6c901c83f834" class="bulleted-list"><li style="list-style-type:circle">The Adventures of Toto</li></ul><ul id="83cca9ce-6ad4-4a11-9915-ec8771ab0d3a" class="bulleted-list"><li style="list-style-type:circle">Iswaran the Storyteller</li></ul><ul id="d579d687-e8f3-4848-8aef-3a7eb7aee9b7" class="bulleted-list"><li style="list-style-type:circle">In the Kingdom of Fools</li></ul><ul id="1e91fdc4-a579-479e-bf23-111648e1df29" class="bulleted-list"><li style="list-style-type:circle">The Happy Prince</li></ul><ul id="4f0ed096-8fbe-4c79-9ab2-09c86beb6a47" class="bulleted-list"><li style="list-style-type:circle">Weathering the Storm in Ersama</li></ul><ul id="1d4354a5-bb57-42d7-a219-09bf0e57c879" class="bulleted-list"><li style="list-style-type:circle">The Last Leaf</li></ul><ul id="84c380d9-6ca7-49ee-8255-015710883238" class="bulleted-list"><li style="list-style-type:circle">A House is Not a Home</li></ul><ul id="1858a9e7-0e87-4a68-bf45-97a641e55b0f" class="bulleted-list"><li style="list-style-type:circle">The Accidental Tourist</li></ul><ul id="f6b9fede-240f-4ff3-a24c-301c89f67635" class="bulleted-list"><li style="list-style-type:circle">The Beggar</li></ul></li></ul><h3 id="993989e6-3517-4b33-a417-ff44e650a29f" class="">Social Science</h3><ul id="c28fd364-1e4e-4070-a444-e26743a21c41" class="bulleted-list"><li style="list-style-type:disc"><strong>History</strong><ul id="9d510fa0-2789-4196-9d40-f970ad85f950" class="bulleted-list"><li style="list-style-type:circle">The French Revolution</li></ul><ul id="7a03a1f4-e78e-4efd-b0bd-3f296e712fda" class="bulleted-list"><li style="list-style-type:circle">Socialism in Europe and the Russian Revolution</li></ul><ul id="360cf7f5-5a0d-4ba9-995c-0fca33f94599" class="bulleted-list"><li style="list-style-type:circle">Nazism and the Rise of Hitler</li></ul><ul id="796a8604-83e8-493a-82c7-a35d815c6826" class="bulleted-list"><li style="list-style-type:circle">Forest Society and Colonialism</li></ul><ul id="ea6d9de1-a055-4482-835c-562dc14987b5" class="bulleted-list"><li style="list-style-type:circle">Pastoralists in the Modern World</li></ul><ul id="f7a022fb-d69d-4c53-bebf-8708aa17d229" class="bulleted-list"><li style="list-style-type:circle">Peasants and Farmers</li></ul><ul id="197c1f60-3d20-4b21-b2c4-b40e2a716d9b" class="bulleted-list"><li style="list-style-type:circle">History and Sport: The Story of Cricket</li></ul><ul id="662a7df9-1ab4-4cd0-a403-703025e604d3" class="bulleted-list"><li style="list-style-type:circle">Clothing: A Social History</li></ul></li></ul><ul id="da94053d-fe65-427e-a546-3f887497553f" class="bulleted-list"><li style="list-style-type:disc"><strong>Geography</strong><ul id="ee041de6-b4dc-4275-ae96-65d80e74d8d1" class="bulleted-list"><li style="list-style-type:circle">India - Size and Location</li></ul><ul id="ed3b3555-e62a-4f02-99eb-cb6e33cb1229" class="bulleted-list"><li style="list-style-type:circle">Physical Features of India</li></ul><ul id="b8cbb55a-9355-415d-8927-2d8063f9e03a" class="bulleted-list"><li style="list-style-type:circle">Drainage</li></ul><ul id="8825f500-5f66-42ae-b18a-cc468f181cf1" class="bulleted-list"><li style="list-style-type:circle">Climate</li></ul><ul id="138f7a8a-0f4e-4aad-adfe-eba3b72d45c2" class="bulleted-list"><li style="list-style-type:circle">Natural Vegetation and Wildlife</li></ul><ul id="55eb1a9f-3090-4f52-99f6-a30ae17e9f2f" class="bulleted-list"><li style="list-style-type:circle">Population</li></ul></li></ul><ul id="cc38b2e7-13a3-467d-a4ac-7ba9cd353f21" class="bulleted-list"><li style="list-style-type:disc"><strong>Civics (Political Science)</strong><ul id="16291edc-2dfd-457f-a904-77da5549c558" class="bulleted-list"><li style="list-style-type:circle">What is Democracy? Why Democracy?</li></ul><ul id="0a148ca7-11d3-40b8-996c-7a7f79f7dcdf" class="bulleted-list"><li style="list-style-type:circle">Constitutional Design</li></ul><ul id="96d4b89e-8a81-4685-a6dd-0f8d4567a7a2" class="bulleted-list"><li style="list-style-type:circle">Electoral Politics</li></ul><ul id="136d7432-0183-48ce-84fe-5d852da0983d" class="bulleted-list"><li style="list-style-type:circle">Working of Institutions</li></ul><ul id="59dda8d5-5783-49e4-9eb1-8e2878c8fe92" class="bulleted-list"><li style="list-style-type:circle">Democratic Rights</li></ul></li></ul><h3 id="39920c33-a9de-466b-86ee-6d073583f929" class="">Hindi</h3><ul id="7da04038-b01b-4aa2-b6d1-ee680b7a41c7" class="bulleted-list"><li style="list-style-type:disc"><strong>Sanchayan</strong><ul id="dcbaad29-3ab0-4f83-9498-4e19b3fccde4" class="bulleted-list"><li style="list-style-type:circle">गिल्लू</li></ul><ul id="7b6cad5f-01db-43d1-b1e4-f9a31b03e830" class="bulleted-list"><li style="list-style-type:circle">स्मृति का भ्रमण</li></ul><ul id="3ac36c65-5727-4ca9-9712-fcf22163dfe1" class="bulleted-list"><li style="list-style-type:circle">मैं तुम्हारा नाम लिखती वक्त</li></ul><ul id="712aa02e-9653-4bd1-b75c-44b63d0c71f9" class="bulleted-list"><li style="list-style-type:circle">रीढ़ की हड्डी</li></ul></li></ul><ul id="aa66f37a-70aa-41e0-9a47-066dfa4b5652" class="bulleted-list"><li style="list-style-type:disc"><strong>Sparsh</strong><ul id="b4ecf3c6-6c54-441c-9fe7-d7a94e42d7a9" class="bulleted-list"><li style="list-style-type:circle">धूल</li></ul><ul id="8371e209-f929-4db0-b1bd-512582328c00" class="bulleted-list"><li style="list-style-type:circle">कबीर की साखियाँ</li></ul><ul id="4c2a4cd4-aa63-4743-846d-cc6f04cb421c" class="bulleted-list"><li style="list-style-type:circle">मीरां</li></ul><ul id="65c329c5-c255-44db-b65c-b5f5451a44d9" class="bulleted-list"><li style="list-style-type:circle">ल्हासा की ओर</li></ul><ul id="432af59c-d6a7-4f08-9ede-e49f19ae97f2" class="bulleted-list"><li style="list-style-type:circle">अब कहाँ दूसरे के दुख से दुखी होने वाले</li></ul><ul id="13d5eaaa-f0f1-46a5-a343-4b620330ed65" class="bulleted-list"><li style="list-style-type:circle">एही ठैयाँ झुलनी हेरानी हो रामा!</li></ul><ul id="c931ed2c-af21-433c-8fd9-fb86ba69a925" class="bulleted-list"><li style="list-style-type:circle">मति मूल्ये मनुष्य भइये</li></ul><ul id="348ff17d-6cf8-45ab-8afc-f351bf42c53a" class="bulleted-list"><li style="list-style-type:circle">कारतूस</li></ul></li></ul><ul id="49987e07-f9c3-47ed-9126-40fc80699b7a" class="bulleted-list"><li style="list-style-type:disc"><strong>Kshitij</strong><ul id="ee084f12-74eb-48ff-8c3a-9c9b1c9d53f1" class="bulleted-list"><li style="list-style-type:circle">गधा गधी का विचार</li></ul><ul id="81a7e137-1603-404c-b06e-0085b95d420b" class="bulleted-list"><li style="list-style-type:circle">पानी की कहानी</li></ul><ul id="1d4a7255-7ea3-4495-8936-8a9e1e48dd98" class="bulleted-list"><li style="list-style-type:circle">बालगोबिन भगत</li></ul><ul id="79d91872-5dd5-4a68-9175-280b51ce546f" class="bulleted-list"><li style="list-style-type:circle">यह दंतुरहित मुस्कान और उसकी उपास्यता</li></ul></li></ul><h3 id="e90daa3d-1106-457c-9ed8-5d23c15eae78" class="">Sanskrit</h3><ul id="15959aba-0ab3-43ba-849e-2086dc373eb9" class="bulleted-list"><li style="list-style-type:disc"><strong>Shemushi</strong><ul id="32175ab0-e72e-4029-a8a6-8417e675e54b" class="bulleted-list"><li style="list-style-type:circle">प्रथमः अध्यायः</li></ul><ul id="9e832188-1cef-4e31-b049-5093b921d595" class="bulleted-list"><li style="list-style-type:circle">द्वितीयः अध्यायः</li></ul><ul id="412df298-9723-43f4-91d9-101f17222660" class="bulleted-list"><li style="list-style-type:circle">तृतीयः अध्यायः</li></ul><ul id="6088ee1d-2237-4f0a-aa46-0d65e355c5a3" class="bulleted-list"><li style="list-style-type:circle">चतुर्थः अध्यायः</li></ul><ul id="75064b11-739a-4ccf-a78e-0cf507dfb83e" class="bulleted-list"><li style="list-style-type:circle">पञ्चमः अध्यायः</li></ul><ul id="c839d280-02b2-48f3-9566-22f8443d8fa7" class="bulleted-list"><li style="list-style-type:circle">षष्ठः अध्यायः</li></ul><ul id="c705db47-7d43-4315-adfa-0a4fd5834d9c" class="bulleted-list"><li style="list-style-type:circle">सप्तमः अध्यायः</li></ul></li></ul><p id="2fdc5c78-f474-4108-8e42-43dc03a1a214" class="">
+</p><p id="6d190a0f-aeb0-4fa8-b17a-50c485e9024e" class=""><em>AcaduVeda - Empowering Minds, Illuminating Futures</em></p></div></article></body></html>
